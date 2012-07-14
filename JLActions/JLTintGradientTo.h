@@ -11,8 +11,8 @@
 @interface JLTintGradientTo : CCActionInterval <NSCopying>
 
 /** creates an action with duration, start and end color for the gradient */
-+(id) actionWithDuration:(ccTime)duration start:(ccColor3B)start end:(ccColor3B)end;
++ (id)actionWithDuration:(ccTime)duration start:(ccColor3B)start end:(ccColor3B)end;
 /** initializes the action with duration, start and end color for the gradient */
--(id) initWithDuration:(ccTime)duration start:(ccColor3B)start end:(ccColor3B)end;
+- (id)initWithDuration:(ccTime)duration start:(ccColor3B)start end:(ccColor3B)end;
 
 @end

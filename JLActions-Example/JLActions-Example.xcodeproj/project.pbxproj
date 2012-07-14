@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A47D2B915B13C3B0037F6AA /* JLBlockUpdateAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A47D2B815B13C3B0037F6AA /* JLBlockUpdateAction.m */; };
 		7A9AB66E15B0C8A500A7B175 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A9AB66D15B0C8A500A7B175 /* QuartzCore.framework */; };
 		7A9AB67015B0C8A500A7B175 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A9AB66F15B0C8A500A7B175 /* OpenGLES.framework */; };
 		7A9AB67215B0C8A500A7B175 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A9AB67115B0C8A500A7B175 /* OpenAL.framework */; };
@@ -138,6 +139,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A47D2B715B13C3B0037F6AA /* JLBlockUpdateAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLBlockUpdateAction.h; path = ../../JLActions/JLBlockUpdateAction.h; sourceTree = "<group>"; };
+		7A47D2B815B13C3B0037F6AA /* JLBlockUpdateAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JLBlockUpdateAction.m; path = ../../JLActions/JLBlockUpdateAction.m; sourceTree = "<group>"; };
 		7A9AB66915B0C8A500A7B175 /* JLActions-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JLActions-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9AB66D15B0C8A500A7B175 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7A9AB66F15B0C8A500A7B175 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -846,6 +849,8 @@
 				7A9AB80715B0CA7400A7B175 /* JLTintGradientBy.m */,
 				7A9AB80815B0CA7400A7B175 /* JLTintGradientTo.h */,
 				7A9AB80915B0CA7400A7B175 /* JLTintGradientTo.m */,
+				7A47D2B715B13C3B0037F6AA /* JLBlockUpdateAction.h */,
+				7A47D2B815B13C3B0037F6AA /* JLBlockUpdateAction.m */,
 			);
 			name = JLActions;
 			sourceTree = "<group>";
@@ -1030,6 +1035,7 @@
 				7A9AB7FF15B0C8A900A7B175 /* IntroLayer.m in Sources */,
 				7A9AB80A15B0CA7400A7B175 /* JLTintGradientBy.m in Sources */,
 				7A9AB80B15B0CA7400A7B175 /* JLTintGradientTo.m in Sources */,
+				7A47D2B915B13C3B0037F6AA /* JLBlockUpdateAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1133,6 +1139,7 @@
 				7A9AB80415B0C8A900A7B175 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,6 +10,7 @@
 #import "MenuLayer.h"
 #import "AppDelegate.h"
 #import "JLTintGradientTo.h"
+#import "JLBlockUpdateAction.h"
 
 typedef void (^MenuItemHandler)(id sender);
 
@@ -36,7 +37,8 @@ typedef void (^MenuItemHandler)(id sender);
 		// Default font size will be 28 points.
 		[CCMenuItemFont setFontSize:28];
 		
-		// Achievement Menu Item using blocks
+		// Tinting a layer gradient
+        __block typeof(self) blockSelf = self;
         MenuItemHandler tintToBlock = ^(id sender) {
             ccColor4B start = ccc4(176, 134, 188, 255);
             ccColor3B startTo = ccc3(106, 179, 197);
@@ -44,7 +46,7 @@ typedef void (^MenuItemHandler)(id sender);
             ccColor3B endTo = ccc3(76, 144, 159);
             CCLayerGradient *layer = [CCLayerGradient layerWithColor:start fadingTo:end];
             layer.contentSize = size;
-            [self addChild:layer];
+            [blockSelf addChild:layer];
             float duration = 0.5f;
             id tintTo = [JLTintGradientTo actionWithDuration:duration start:startTo end:endTo];
             id tintBack = [JLTintGradientTo actionWithDuration:duration
@@ -57,10 +59,24 @@ typedef void (^MenuItemHandler)(id sender);
                                nil]];
             [layer runAction:tintForever];
         };
+        // Block based update
+        MenuItemHandler blockUpdateBlock = ^(id sender) {
+            CCLayerColor *layer = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 255)];
+            [blockSelf addChild:layer];
+            
+            id blockUpdateAction = [JLBlockUpdateAction actionWithBlock:^(id sender, ccTime delta) {
+                NSLog(@"SENDER: (%f) %@", delta, sender);
+                CCNode *node = (CCNode *)sender;
+                node.position = ccpAdd(node.position, ccp(0.0f, 1.0f));
+            }];
+            [layer runAction:blockUpdateAction];
+        };
 		CCMenuItem *tintGradientTo = [CCMenuItemFont itemWithString:@"JLTintGradientTo"
                                                               block:tintToBlock];
+        CCMenuItem *blockBasedUpdate = [CCMenuItemFont itemWithString:@"JLBlockUpdateAction"
+                                                                block:blockUpdateBlock];
 
-		CCMenu *menu = [CCMenu menuWithItems:tintGradientTo, nil];
+		CCMenu *menu = [CCMenu menuWithItems:tintGradientTo, blockBasedUpdate, nil];
 		
 		[menu alignItemsHorizontallyWithPadding:20];
 		[menu setPosition:ccp(size.width / 2, size.height / 2 - 50)];
